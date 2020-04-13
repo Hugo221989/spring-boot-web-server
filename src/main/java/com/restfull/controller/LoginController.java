@@ -22,6 +22,7 @@ public class LoginController {
 	public ResponseEntity<String> obtenerClienteSda( ){
 		List<Alumno> alumnos = alumnoRepository.findAll();
 		String alumnosString = "";
+		System.out.println("ALUMNOS:");
 		for(Alumno a: alumnos) {
 			System.out.println(a.getNombre() +" - "+ a.getCiudad());
 			alumnosString += a.getNombre() +" - "+ a.getCiudad() +" \n";
