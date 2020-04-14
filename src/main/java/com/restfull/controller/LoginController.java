@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.restfull.model.Alumno;
-import com.restfull.repository.AlumnoRepository;
+import com.restfull.service.IAlumno;
 
 
 @RestController
@@ -16,11 +16,11 @@ import com.restfull.repository.AlumnoRepository;
 public class LoginController {
 	
 	@Autowired
-	private AlumnoRepository alumnoRepository;
+	private IAlumno alumnoService;
 	
 	@GetMapping("/")
-	public ResponseEntity<String> obtenerClienteSda( ){
-		List<Alumno> alumnos = alumnoRepository.findAll();
+	public ResponseEntity<String> obtenerAlumnos( ){
+		List<Alumno> alumnos = alumnoService.getAlumnos();
 		String alumnosString = "";
 		System.out.println("ALUMNOS:");
 		for(Alumno a: alumnos) {

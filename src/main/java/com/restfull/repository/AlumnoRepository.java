@@ -10,6 +10,6 @@ import com.restfull.model.Alumno;
 
 @Repository
 @Transactional
-public interface AlumnoRepository extends JpaRepository<Alumno, BigDecimal>{
+public interface AlumnoRepository extends JpaRepository<Alumno, Integer>{
 
 }

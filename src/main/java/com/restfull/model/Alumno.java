@@ -20,14 +20,23 @@ public class Alumno implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private BigDecimal id;
+	private int id;
 	private String nombre;
 	private String apellido;
 	private String ciudad;
-	public BigDecimal getId() {
+	
+	
+	public Alumno(int id, String nombre, String apellido, String ciudad) {
+		super();
+		this.id = id;
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.ciudad = ciudad;
+	}
+	public int getId() {
 		return id;
 	}
-	public void setId(BigDecimal id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getNombre() {
