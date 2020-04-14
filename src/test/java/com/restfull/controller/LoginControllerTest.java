@@ -51,7 +51,7 @@ public class LoginControllerTest {
 		Alumno a1 = new Alumno(1, "Hugo", "Onetto", "Barcelona");
 //		Alumno a2 = alumnoService.findById(a1.getId());
 		when(alumnoRepository.findById(a1.getId())).thenReturn(Stream.of(a1).findFirst());
-		assertEquals("Hugo", a1.getNombre(), "Deberia retornar: ");
+		assertEquals("Hugo", a1.getNombre());
 	}
 	
 	@Test
@@ -62,7 +62,7 @@ public class LoginControllerTest {
 		ArgumentCaptor<Alumno> captor = ArgumentCaptor.forClass(Alumno.class);
 		verify(alumnoRepository, times(1)).save(captor.capture());
 		Alumno alumnoCapturado = captor.getValue();
-		assertThat(String.valueOf(alumnoCapturado.getId())).isEqualTo(String.valueOf(a1.getId()), "Deberia retornar: ");
+		assertThat(String.valueOf(alumnoCapturado.getId())).isEqualTo(String.valueOf(a1.getId()));
 	}
 	
 	@Test
